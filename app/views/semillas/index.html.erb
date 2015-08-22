@@ -1,0 +1,29 @@
+<h1>Listing semillas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Picture</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @semillas.each do |semilla| %>
+      <tr>
+        <td><%= semilla.name %></td>
+        <td><%= semilla.description %></td>
+        <td><%= semilla.picture %></td>
+        <td><%= link_to 'Show', semilla %></td>
+        <td><%= link_to 'Edit', edit_semilla_path(semilla) %></td>
+        <td><%= link_to 'Destroy', semilla, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Semilla', new_semilla_path %>
