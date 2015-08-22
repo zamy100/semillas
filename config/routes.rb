@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'pages/info'
+
   resources :semillas
   root :to => redirect('/semillas')
 
